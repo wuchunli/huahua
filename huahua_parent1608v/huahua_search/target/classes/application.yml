@@ -1,0 +1,10 @@
+server:
+  port: 9007
+
+spring:
+  application:
+    name: huahua-search
+
+  data:
+    elasticsearch:
+      cluster-nodes: localhost:9300

@@ -1,0 +1,9 @@
+server:
+  port: 7000 #port
+
+eureka:
+  client:
+    register-with-eureka: false #是否将自己的当前服务注册到服务中心eureka
+    fetch-registry: false #是否从 eureka中获取注册的信息
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka/ #设置当前访问的路径

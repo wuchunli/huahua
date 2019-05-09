@@ -1,0 +1,23 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: huahua-web
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka/ #设置当前访问的路径
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    huahua-base: #基础
+      path: /base/**  #配置请求URL的请求规则
+      serviceId: huahua-base  #指定Eureka注册中心中的服务id
+    huahua-qa:
+      path: /qa/**
+      serviceId: huahua-qa
+    huahua-article:
+      path: /article/**
+      serviceId: huahua-article

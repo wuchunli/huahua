@@ -1,0 +1,7 @@
+spring:   #系统用的不经常改动的信息写在这里,boostrap的优先级比appication的优先级高
+  cloud:
+    config:
+      name: base
+      profile: dev
+      label: master  #提交到主干
+      uri: http://127.0.0.1:12000

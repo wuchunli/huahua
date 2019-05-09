@@ -1,0 +1,30 @@
+server: 
+  port: 9003
+spring: 
+  application:  
+    name: huahua-qa #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.2.17.130:3306/huahua_qa?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: root
+  jpa: 
+    database: MySQL
+    show-sql: true
+#jwt.config
+jwt:
+  config:
+    key: huahuaCommunity
+    ##过期时间
+    ttl: 3600000
+#注册到eureka服务
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka/ #设置当前访问的路径
+  instance:
+    prefer-ip-address: true
+
+feign:
+  hystrix:
+    enabled: true
